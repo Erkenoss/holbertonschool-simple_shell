@@ -22,7 +22,7 @@ int main()
 			input[read - 1] = '\0';
 		/*token_input(input, &nbr_words);*/
 		input_copy = strdup(input);
-		executable((const char *)input_copy);
+		executable(input_copy);
 		free(input_copy);
 	}
 

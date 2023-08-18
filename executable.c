@@ -1,10 +1,12 @@
 #include "main.h"
 
-void executable(const char *path_file)
+void executable(char *path_file)
 {
-	char *const argv[] = {(char *)path_file, NULL};
+	char *argv[WORDS] = {NULL};
+	pid_t child;
 
-	pid_t child = fork();
+	child = fork();
+	argv[0] = path_file;
 
 	if (child == - 1)
 	{
