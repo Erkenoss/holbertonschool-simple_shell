@@ -1,6 +1,12 @@
 #include "main.h"
 
-int main()
+/**
+ * main - Entry point
+ *
+ *
+ * Return: 0 to sucess
+ */
+int main(void)
 {
 	char *input = NULL;
 	size_t len_input = 0;
@@ -12,7 +18,7 @@ int main()
 	{
 		printf("I am the best: ");
 		read = getline(&input, &len_input, stdin);
-		if (read == - 1)
+		if (read == -1)
 		{
 			printf("\n");
 			free(input);
