@@ -33,5 +33,5 @@ void executable(char *path_file)
 	{
 		wait(NULL);
 	}
-	return (EXIT_SUCCESS);
+	return;
 }
