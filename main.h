@@ -11,6 +11,6 @@
 #include <sys/types.h>
 
 void token_input(char *input, char *tokens[], int *nbr_words);
-void executable(char *path_file, char *argv[]);
+void executable(char *path_file, char *argv[], int *nbr_words);
 
 #endif

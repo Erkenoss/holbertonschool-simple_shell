@@ -29,7 +29,7 @@ int main(void)
 			input[read - 1] = '\0';
 		input_copy = strdup(input);
 		token_input(input_copy, tokens, &nbr_words);
-		executable(tokens[0], tokens);
+		executable(tokens[0], tokens, &nbr_words);
 		free(input_copy);
 	}
 	free(input);
