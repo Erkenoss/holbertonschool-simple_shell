@@ -27,13 +27,11 @@ int main(void)
 		}
 		if (read > 0 && input[read - 1] == '\n')
 			input[read - 1] = '\0';
-		token_input(input, tokens, &nbr_words);
 		input_copy = strdup(input);
+		token_input(input_copy, tokens, &nbr_words);
 		executable(tokens[0], tokens);
 		free(input_copy);
 	}
-
 	free(input);
 	return (0);
-
 }

@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-void token_input(const char *input, char *tokens[], int *nbr_words);
+void token_input(char *input, char *tokens[], int *nbr_words);
 void executable(char *path_file, char *argv[]);
 
 #endif
