@@ -7,6 +7,7 @@
 void executable(char *path_file)
 {
 	char *argv[WORDS] = {NULL};
+	int status;
 	pid_t child;
 
 	child = fork();
@@ -22,6 +23,8 @@ void executable(char *path_file)
 		if (access(path_file, X_OK) == 0)
 		{
 			execve(path_file, argv, NULL);
+			perror("Execve Error");
+			exit(EXIT_FAILURE);
 		}
 		else
 		{
@@ -31,7 +34,9 @@ void executable(char *path_file)
 	}
 	else
 	{
-		wait(NULL);
+		if (wait(&status) == -1)
+		{
+			perror("WAIT ERROR");
+		}
 	}
-	return;
 }
