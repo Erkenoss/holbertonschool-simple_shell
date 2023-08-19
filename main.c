@@ -12,7 +12,8 @@ int main(void)
 	size_t len_input = 0;
 	ssize_t read;
 	char *input_copy;
-	/*int nbr_words;*/
+	char *tokens[WORDS];
+	int nbr_words = 0;
 
 	while (1)
 	{
@@ -26,9 +27,9 @@ int main(void)
 		}
 		if (read > 0 && input[read - 1] == '\n')
 			input[read - 1] = '\0';
-		/*token_input(input, &nbr_words);*/
+		token_input(input, tokens, &nbr_words);
 		input_copy = strdup(input);
-		executable(input_copy);
+		executable(tokens[0], tokens);
 		free(input_copy);
 	}
 
