@@ -12,8 +12,11 @@ int main(void)
 	size_t len_input = 0;
 	ssize_t read;
 	char *input_copy;
+	char *path;
+	char *path_cmd;
 	char *tokens[WORDS];
 	int nbr_words = 0;
+
 
 	while (1)
 	{
@@ -29,7 +32,9 @@ int main(void)
 			input[read - 1] = '\0';
 		input_copy = strdup(input);
 		token_input(input_copy, tokens, &nbr_words);
-		executable(tokens[0], tokens, &nbr_words);
+		path = _getenv("PATH");
+		path_cmd = _getpath(tokens[0], path);		
+		executable(path_cmd, tokens, &nbr_words);
 		free(input_copy);
 	}
 	free(input);

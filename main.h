@@ -12,5 +12,7 @@
 
 void token_input(char *input, char *tokens[], int *nbr_words);
 void executable(char *path_file, char *argv[], int *nbr_words);
+char *_getenv(const char *name);
+char *_getpath(const char *cmd, const char *path);
 
 #endif
