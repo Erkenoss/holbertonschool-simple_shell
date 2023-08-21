@@ -6,14 +6,16 @@
  *
  * Return: 0 to sucess
  */
+
 int main(void)
 {
 	char *input = NULL;
 	size_t len_input = 0;
 	ssize_t read;
-	char *input_copy;
-	char *path_cmd;
-	char *tokens[WORDS];
+	char *input_copy = NULL;
+	char *path_cmd = NULL;
+	char **tokens = NULL;
+	int i = 0;
 
 	while (1)
 	{
@@ -26,13 +28,28 @@ int main(void)
 			exit(EXIT_FAILURE);
 		}
 		if (read > 0 && input[read - 1] == '\n')
+		{
 			input[read - 1] = '\0';
+		}
+		
 		input_copy = strdup(input);
-		token_input(input_copy, tokens);
+		
+		tokens = token_input(input_copy);
+	
 		path_cmd = tokens[0];
+	
 		if (strchr(path_cmd, '/') == NULL)
+		{
 			path_cmd = _getpath(tokens[0], _getenv("PATH"));
+		}
+		
 		executable(path_cmd, tokens);
+		while (tokens[i] != NULL)
+		{
+			free(tokens[i]);
+			i++;
+		}
+		free(tokens);
 		free(input_copy);
 	}
 	free(input);

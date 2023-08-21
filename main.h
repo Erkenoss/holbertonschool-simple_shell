@@ -10,9 +10,9 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-void token_input(char *input, char *tokens[]);
+char **token_input(char *input);
 void executable(char *path_file, char *argv[]);
 char *_getenv(const char *name);
-char *_getpath(const char *cmd, const char *path);
+char *_getpath(char *cmd, char *path);
 
 #endif

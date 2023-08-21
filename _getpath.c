@@ -9,23 +9,20 @@
  * Return: the good path in PATH
  */
 
-char *_getpath(const char *cmd, const char *path)
+char *_getpath(char *cmd, char *path)
 {
-	char *path_copy;
 	char *dir;
 	char *good_path;
 	char *final_path = NULL;
 
-	path_copy = strdup(path);
-	dir = strtok(path_copy, ":");
+	dir = strtok(path, ":");
 
 	while (dir != NULL)
 	{
-		good_path = malloc(strlen(dir) + strlen(cmd) + 2);
+		good_path = malloc(strlen(dir) + strlen(cmd) + 2);	
 		if (good_path == NULL)
 		{
 			perror("Malloc is NULL");
-			free(path_copy);
 			return (NULL);
 		}
 
@@ -35,13 +32,11 @@ char *_getpath(const char *cmd, const char *path)
 		{	
 			final_path = strdup(good_path);
 			free(good_path);
-			free(path_copy);
 			return (final_path);
 		}
 		free(good_path);
 		dir = strtok(NULL, ":");
 	}
-	free(path_copy);
 	return (NULL);
 	
 	

@@ -1,9 +1,12 @@
 #include "main.h"
 
-void token_input(char *input, char *tokens[])
+char **token_input(char *input)
 {
 	char *split;
+	char **tokens = NULL;
 	int index = 0;
+	
+	tokens = malloc(sizeof(char) * strlen(input) + 1);
 
 	if (input == NULL)
 		printf("\n");
@@ -11,8 +14,11 @@ void token_input(char *input, char *tokens[])
 	split = strtok(input, " ");
 	while (split != NULL)
 	{
-		tokens[index] = split;
+		tokens[index] = strdup(split);
 		index++;
 		split = strtok(NULL, " ");
 	}
+	tokens[index] = NULL;
+
+	return (tokens);
 }
