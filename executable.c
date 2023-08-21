@@ -4,14 +4,17 @@
  * executable - Execute a file if it has executable permissions
  * @path_file: Path to the executable file
  */
-void executable(char *path_file)
+void executable(char *path_file, char *argv[])
 {
-	char *argv[WORDS] = {NULL};
 	int status;
 	pid_t child;
 
+	if (access(path_file, X_OK) != 0)
+	{
+		perror("file not found");
+		exit(EXIT_FAILURE);
+	}
 	child = fork();
-	argv[0] = path_file;
 
 	if (child == -1)
 	{
@@ -20,23 +23,11 @@ void executable(char *path_file)
 	}
 	else if (child == 0)
 	{
-		if (access(path_file, X_OK) == 0)
-		{
-			execve(path_file, argv, NULL);
-			perror("Execve Error");
-			exit(EXIT_FAILURE);
-		}
-		else
-		{
-			perror("File not found");
-			exit(EXIT_FAILURE);
-		}
+		execve(path_file, argv, NULL);
+		exit(EXIT_SUCCESS);
 	}
 	else
 	{
-		if (wait(&status) == -1)
-		{
-			perror("WAIT ERROR");
-		}
+		wait(&status);
 	}
 }

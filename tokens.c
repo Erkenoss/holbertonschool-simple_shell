@@ -1,23 +1,18 @@
 #include "main.h"
 
-void token_input(const char *input, int *nbr_words)
+void token_input(char *input, char *tokens[])
 {
-	char *tokens[WORDS];
-	char *copy_input;
 	char *split;
+	int index = 0;
 
 	if (input == NULL)
 		printf("\n");
 
-	copy_input = strdup(input);
-	split = strtok(copy_input, " ");
-	*nbr_words = 0;
-
-	while (split != NULL && *nbr_words < WORDS)
+	split = strtok(input, " ");
+	while (split != NULL)
 	{
-		tokens[*nbr_words] = split;
-		printf("token: %s\n", tokens[*nbr_words]);
-		(*nbr_words)++;
+		tokens[index] = split;
+		index++;
 		split = strtok(NULL, " ");
 	}
 }
