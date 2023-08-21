@@ -4,7 +4,7 @@
  * executable - Execute a file if it has executable permissions
  * @path_file: Path to the executable file
  */
-void executable(char *path_file, char *argv[])
+void executable(char *path_file, char **argv)
 {
 	int status;
 	pid_t child;

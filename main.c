@@ -11,8 +11,7 @@ int main(void)
 {
 	char *input = NULL;
 	size_t len_input = 0;
-	ssize_t read;
-	char *input_copy = NULL;
+	ssize_t read = 0;
 	char *path_cmd = NULL;
 	char **tokens = NULL;
 	int i = 0;
@@ -31,26 +30,26 @@ int main(void)
 		{
 			input[read - 1] = '\0';
 		}
-		
-		input_copy = strdup(input);
-		
-		tokens = token_input(input_copy);
-	
-		path_cmd = tokens[0];
+		tokens = token_input(input);
+
+		path_cmd = strdup(tokens[0]);
 	
 		if (strchr(path_cmd, '/') == NULL)
 		{
+			free(path_cmd);
 			path_cmd = _getpath(tokens[0], _getenv("PATH"));
 		}
-		
+
 		executable(path_cmd, tokens);
+		
+		i = 0;
 		while (tokens[i] != NULL)
 		{
 			free(tokens[i]);
 			i++;
 		}
 		free(tokens);
-		free(input_copy);
+		free(path_cmd);
 	}
 	free(input);
 	return (0);

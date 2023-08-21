@@ -11,8 +11,8 @@
 
 char *_getpath(char *cmd, char *path)
 {
-	char *dir;
-	char *good_path;
+	char *dir = NULL;
+	char *good_path = NULL;
 	char *final_path = NULL;
 
 	dir = strtok(path, ":");
@@ -27,6 +27,7 @@ char *_getpath(char *cmd, char *path)
 		}
 
 		sprintf(good_path, "%s/%s", dir, cmd);
+		printf("Checking path: %s\n", good_path);
 
 		if (access(good_path, X_OK) == 0)
 		{	
@@ -37,7 +38,6 @@ char *_getpath(char *cmd, char *path)
 		free(good_path);
 		dir = strtok(NULL, ":");
 	}
-	return (NULL);
-	
-	
+	free(final_path);
+	return (NULL);	
 }

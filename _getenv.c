@@ -3,9 +3,9 @@
 char *_getenv(const char *name)
 {
 	int i = 0;
-	char *entry;
-	char *variable;
-	char *value;
+	char *entry = NULL;
+	char *variable = NULL;
+	char *value = NULL;
 
 	extern char **environ; /*declare the external 'environ' variable */
 
