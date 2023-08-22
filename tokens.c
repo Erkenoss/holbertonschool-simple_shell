@@ -1,45 +1,22 @@
 #include "main.h"
 
-char **token_input(char *input)
+void token_input(char *input)
 {
 	char *split = NULL;
-	char **tokens = NULL;
-	char *input_copy = NULL;
+	char *tokens[1024] = { NULL };
 	int index = 0;
-	int nbr_tokens = 0;
-	
-	if (input == NULL)
-	{
-        	return NULL;
-	}
-
-	input_copy = malloc(strlen(input) + 1);
-	strcpy(input_copy, input);
-
-	split = strtok(input_copy, " ");
-
-	while(split != NULL)
-	{
-		nbr_tokens++;
-		split = strtok(NULL, " ");
-	}
-	free(input_copy);
-	
-	tokens = malloc(sizeof(char *) * (nbr_tokens + 1));
-
-	if (tokens == NULL)
-	{
-		return(NULL);
-	}
 
 	split = strtok(input, " ");
-	while (split != NULL)
+	while (split)
 	{
-		tokens[index] = malloc(strlen(split) + 1);
-		strcpy(tokens[index], split);
-		index++;
+		tokens[index] = split;
+		index += 1;
 		split = strtok(NULL, " ");
 	}
-	tokens[index] = NULL;
-	return (tokens);
+
+	if (strchr(tokens[0], '/') == NULL)
+		tokens[0] = _getpath(tokens[0]);
+	executable(tokens);
+	if (tokens[0] != NULL)
+		free(tokens[0]);
 }

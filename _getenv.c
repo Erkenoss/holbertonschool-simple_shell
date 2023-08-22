@@ -7,18 +7,16 @@ char *_getenv(const char *name)
 	char *variable = NULL;
 	char *value = NULL;
 
-	extern char **environ; /*declare the external 'environ' variable */
-
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		entry = environ[i];
+		entry = strdup(environ[i]);
 		variable = strtok(entry, "=");
 
 		if (variable != NULL && strcmp(variable, name) == 0)
 		{
-			value = strtok(NULL, "");	
-			return (value);
+			value = strtok(NULL, "");
 		}
+		free(entry);
 	}
-	return (NULL);
+	return (value);
 }

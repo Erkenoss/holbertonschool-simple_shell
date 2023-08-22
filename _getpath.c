@@ -1,44 +1,52 @@
 #include "main.h"
-
 /**
- * _getpath - search the godd path in PATH
+ * path_command - function that finds the path to execute command
+ * @command: command
  *
- * @path: path to cmp
- * @cmd: path or cmd give in output
- *
- * Return: the good path in PATH
+ * Return: Nothing.
  */
 
-char *_getpath(char *cmd, char *path)
+char *_getpath(char *command)
 {
-	char *dir = NULL;
-	char *good_path = NULL;
-	char *final_path = NULL;
+	int i = 0;
+	char *token = NULL;
+	char *cache;
+	char *result = NULL;
 
-	dir = strtok(path, ":");
-
-	while (dir != NULL)
+	while (environ[i])
 	{
-		good_path = malloc(strlen(dir) + strlen(cmd) + 2);	
-		if (good_path == NULL)
-		{
-			perror("Malloc is NULL");
-			return (NULL);
-		}
+		cache = strdup(environ[i]);
+		token = strtok(cache, "=");
 
-		sprintf(good_path, "%s/%s", dir, cmd);
-		printf("Checking path: %s\n", good_path);
-
-		if (access(good_path, X_OK) == 0)
+		if (strcmp(token, "PATH") == 0)
 		{
-			final_path = malloc(strlen(good_path) + 1);	
-			strcpy(final_path, good_path);
-			printf("%s---%s\n", final_path, good_path);
-			free(good_path);
-			return (final_path);
+			token = strtok(NULL, "=");
+			token = strtok(token, ":");
+
+			while (token)
+			{
+
+				result = malloc(strlen(token) + strlen(command) + 2);
+				if (result ==  NULL)
+				{
+					perror("Malloc is NULL");
+					return (NULL);
+				}
+				sprintf(result, "%s/%s", token, command);
+				printf("%s\n", result);
+				if (access(result, X_OK) == 0)
+				{
+					free(cache);
+					return (result);
+				}
+				free(result);
+				token = strtok(NULL, ":");
+			}
 		}
-		free(good_path);
-		dir = strtok(NULL, ":");
+		free(cache);
+		i++;
 	}
-	return (NULL);	
+	if (result != NULL)
+		free(result);
+	return (command);
 }
