@@ -33,7 +33,6 @@ char *_getpath(char *command)
 					return (NULL);
 				}
 				sprintf(result, "%s/%s", token, command);
-				printf("%s\n", result);
 				if (access(result, X_OK) == 0)
 				{
 					free(cache);

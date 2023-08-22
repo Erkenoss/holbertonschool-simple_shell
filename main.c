@@ -20,6 +20,7 @@ int main(void)
 		if (read == -1)
 		{
 			free(input);
+			printf("\n");
 			exit(EXIT_FAILURE);
 		}
 		if (read > 0 && input[read - 1] == '\n')
