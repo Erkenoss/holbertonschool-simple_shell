@@ -13,7 +13,9 @@ char **token_input(char *input)
         	return NULL;
 	}
 
-	input_copy = strdup(input);
+	input_copy = malloc(strlen(input) + 1);
+	strcpy(input_copy, input);
+
 	split = strtok(input_copy, " ");
 
 	while(split != NULL)
@@ -33,7 +35,8 @@ char **token_input(char *input)
 	split = strtok(input, " ");
 	while (split != NULL)
 	{
-		tokens[index] = strdup(split);
+		tokens[index] = malloc(strlen(split) + 1);
+		strcpy(tokens[index], split);
 		index++;
 		split = strtok(NULL, " ");
 	}

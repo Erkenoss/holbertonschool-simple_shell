@@ -30,14 +30,15 @@ char *_getpath(char *cmd, char *path)
 		printf("Checking path: %s\n", good_path);
 
 		if (access(good_path, X_OK) == 0)
-		{	
-			final_path = strdup(good_path);
+		{
+			final_path = malloc(strlen(good_path) + 1);	
+			strcpy(final_path, good_path);
+			printf("%s---%s\n", final_path, good_path);
 			free(good_path);
 			return (final_path);
 		}
 		free(good_path);
 		dir = strtok(NULL, ":");
 	}
-	free(final_path);
 	return (NULL);	
 }

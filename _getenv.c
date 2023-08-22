@@ -16,7 +16,7 @@ char *_getenv(const char *name)
 
 		if (variable != NULL && strcmp(variable, name) == 0)
 		{
-			value = strtok(NULL, "");
+			value = strtok(NULL, "");	
 			return (value);
 		}
 	}
