@@ -15,8 +15,13 @@ void token_input(char *input)
 	}
 
 	if (strchr(tokens[0], '/') == NULL)
+	{
 		tokens[0] = _getpath(tokens[0]);
-	executable(tokens);
-	if (tokens[0] != NULL)
+		executable(tokens);
 		free(tokens[0]);
+	}
+	else
+	{
+		executable(tokens);
+	}
 }
