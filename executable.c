@@ -12,7 +12,6 @@ void executable(char *argv[])
 	if (access(argv[0], X_OK) != 0)
 	{
 		fprintf(stderr, "./hsh: 1: %s: not found\n", argv[0]);
-		printf("free argv[0]\n");
 		free(argv[0]);
 		exit(127);
 	}

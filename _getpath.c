@@ -35,16 +35,13 @@ char *_getpath(char *command)
 				sprintf(result, "%s/%s", token, command);
 				if (access(result, X_OK) == 0)
 				{
-					printf("free cache and return result\n");
 					free(cache);
 					return (result);
 				}
-				printf("free result\n");
 				free(result);
 				token = strtok(NULL, ":");
 			}
 		}
-		printf("free cache\n");
 		free(cache);
 		i++;
 	}
