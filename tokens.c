@@ -31,7 +31,6 @@ void token_input(char *input)
 	{
 		tokens[0] = _getpath(tokens[0]);
 		executable(tokens);
-		free(tokens[0]);
 	}
 	else
 	{

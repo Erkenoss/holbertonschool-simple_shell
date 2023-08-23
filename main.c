@@ -24,6 +24,7 @@ int main(void)
 		read = getline(&input, &len_input, stdin);
 		if (read == EOF)
 		{
+			printf("free input EOF\n");
 			free(input);
 			exit(0);
 		}
@@ -33,6 +34,7 @@ int main(void)
 		}
 		token_input(input);
 	}
+	printf("free input end of main\n");
 	free(input);
 	return (0);
 }
