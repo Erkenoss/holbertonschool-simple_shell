@@ -36,7 +36,7 @@ int main(void)
 		is_empty = 1;
 		for (index = 0; index < len_input; index++) 
 		{
-			if (input[index] != '\0' && input[index] != '\n') 
+			if (input[index] != '\0' && input[index] != '\n' && input[index] != ' ') 
 			{
 				is_empty = 0;
 				break;
