@@ -19,7 +19,7 @@ void executable(char *argv[])
 	if (child == -1)
 	{
 		perror("Fail Fork\n");
-		exit(EXIT_FAILURE);
+		exit(0);
 	}
 	else if (child == 0)
 	{

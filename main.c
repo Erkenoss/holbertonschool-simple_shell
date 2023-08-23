@@ -28,7 +28,7 @@ int main(void)
 		if (read == -1)
 		{
 			free(input);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		if (read > 0 && input[read - 1] == '\n') {
 			input[read - 1] = '\0';
