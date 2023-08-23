@@ -11,8 +11,8 @@ void executable(char *argv[])
 
 	if (access(argv[0], X_OK) != 0)
 	{
-		perror("file not found");
-		return;
+		printf("./hsh: 1: %s: not found\n", argv[0]);
+		exit(127);
 	}
 	child = fork();
 
