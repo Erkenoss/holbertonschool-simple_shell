@@ -12,11 +12,10 @@ int main(void)
 	char *input = NULL;
 	size_t len_input = 0;
 	ssize_t read = 0;
-	int is_interactive = isatty(STDIN_FILENO);
 
 	while (1)
 	{
-		if (is_interactive)
+		if (isatty(STDIN_FILENO))
 		{
 			printf("$ ");
 			fflush(stdout);
