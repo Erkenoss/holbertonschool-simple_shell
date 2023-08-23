@@ -9,18 +9,22 @@ void token_input(char *input)
 	split = strtok(input, " ");
 	while (split)
 	{
-		tokens[index] = split;
-		index += 1;
+		if (strlen(split) > 0)
+		{
+			tokens[index] = split;
+			index += 1;
+		}
 		split = strtok(NULL, " ");
 	}
-
-	if(tokens[0] != NULL)
+	if (tokens[0] == NULL)
 	{
-		if (strcmp(tokens[0], "env") == 0)
-		{
-			print_env();
-			return;
-		}
+		return;
+	}
+
+	if (strcmp(tokens[0], "env") == 0)
+	{
+		print_env();
+		return;
 	}
 
 	if (strchr(tokens[0], '/') == NULL)
