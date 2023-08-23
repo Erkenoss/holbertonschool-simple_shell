@@ -8,11 +8,13 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
+extern char **environ;
+
 void token_input(char *input);
 void executable(char **argv);
 char *_getenv(const char *name);
 char *_getpath(char *cmd);
+void print_env(void);
 
-extern char **environ; /*declare the external 'environ' variable */
 
 #endif
