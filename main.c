@@ -12,10 +12,15 @@ int main(void)
 	char *input = NULL;
 	size_t len_input = 0;
 	ssize_t read = 0;
+	int is_interactive = isatty(STDIN_FILENO);	
 
 	while (1)
 	{
-		printf("$ ");
+		if (is_interactive)
+		{
+			printf("$ ");
+		}
+
 		read = getline(&input, &len_input, stdin);
 		if (read == -1)
 		{
@@ -25,7 +30,7 @@ int main(void)
 		}
 		if (read > 0 && input[read - 1] == '\n')
 		{
-    		input[read - 1] = '\0';
+   			input[read - 1] = '\0';
 		}
 		token_input(input);
 	}
