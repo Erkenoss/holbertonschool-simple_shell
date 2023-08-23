@@ -24,7 +24,7 @@ void executable(char *argv[])
 	else if (child == 0)
 	{
 		execve(argv[0], argv, NULL);
-		exit(EXIT_SUCCESS);
+		exit(0);
 	}
 	else
 	{
