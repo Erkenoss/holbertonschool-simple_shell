@@ -16,19 +16,6 @@ void token_input(char *input)
 		}
 		split = strtok(NULL, " ");
 	}
-	if (tokens[0] == NULL)
-	{
-		return;
-	}
-
-	our_exit(tokens);
-	
-	if (strcmp(tokens[0], "env") == 0)
-	{
-		print_env();
-		return;
-	}
-
 	if (strchr(tokens[0], '/') == NULL)
 	{
 		tokens[0] = _getpath(tokens[0]);
@@ -38,5 +25,17 @@ void token_input(char *input)
 	else
 	{
 		executable(tokens);
+	}
+	if (tokens[0] == NULL)
+	{
+		return;
+	}
+
+	our_exit(tokens);
+
+	if (strcmp(tokens[0], "env") == 0)
+	{
+		print_env();
+		return;
 	}
 }
