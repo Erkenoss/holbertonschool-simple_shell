@@ -37,6 +37,7 @@ void executable(char *argv[])
 			status_exit = WEXITSTATUS(status);
 			if (status_exit != 0)
 			{
+				free(argv[0]);
 				exit(2);
 			}
 		}
