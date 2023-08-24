@@ -20,6 +20,7 @@ char *_getpath(char *command)
 
 		if (strcmp(token, "PATH") == 0 && strlen(token) == 4 && strcmp(token, "PATH1") != 0)
 		{
+			printf("%s\n", token);
 			token = strtok(NULL, "=");
 			token = strtok(token, ":");
 			while (token)
