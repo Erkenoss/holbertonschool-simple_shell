@@ -11,9 +11,17 @@ void executable(char *argv[])
 
 	if (access(argv[0], X_OK) != 0)
 	{
-		fprintf(stderr, "./hsh: 1: %s: not found\n", argv[0]);
-		free(argv[0]);
-		exit(127);
+		if (strcmp(argv[0], "exit") == 0 && argv[1] == NULL)
+		{
+			free(argv[0]);
+			exit(0);
+		}
+		else
+		{  
+			fprintf(stderr, "./hsh: 1: %s: not found\n", argv[0]);
+			free(argv[0]);
+			exit(127);
+		}
 	}
 	child = fork();
 
@@ -24,7 +32,7 @@ void executable(char *argv[])
 	}
 	else if (child == 0)
 	{
-		execve(argv[0], argv, NULL);
+		execve(argv[0], argv, environ);
 		exit(0);
 	}
 	else
