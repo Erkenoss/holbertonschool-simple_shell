@@ -25,7 +25,6 @@ char *_getpath(char *command)
 
 			while (token)
 			{
-
 				result = malloc(strlen(token) + strlen(command) + 2);
 				if (result ==  NULL)
 				{
