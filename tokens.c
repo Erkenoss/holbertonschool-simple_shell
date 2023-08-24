@@ -21,15 +21,12 @@ void token_input(char *input)
 		return;
 	}
 
+	our_exit(tokens);
+	
 	if (strcmp(tokens[0], "env") == 0)
 	{
 		print_env();
 		return;
-	}
-	if (strcmp(tokens[0], "exit") == 0 && tokens[1] == NULL)
-	{
-		free(tokens[0]);
-		exit(0);
 	}
 
 	if (strchr(tokens[0], '/') == NULL)
