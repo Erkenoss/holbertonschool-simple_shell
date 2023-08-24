@@ -18,7 +18,7 @@ char *_getpath(char *command)
 		cache = strdup(environ[i]);
 		token = strtok(cache, "=");
 
-		if (strcmp(token, "PATH") == 0 && strlen(token) == 4)
+		if (strcmp(token, "PATH") == 0 && strlen(token) == 4 && strcmp(token, "PATH1") != 0)
 		{
 			token = strtok(NULL, "=");
 			token = strtok(token, ":");
