@@ -18,11 +18,10 @@ char *_getpath(char *command)
 		cache = strdup(environ[i]);
 		token = strtok(cache, "=");
 
-		if (strncmp(token, "PATH", 4) == 0)
+		if (strcmp(token, "PATH") == 0 && strlen(token) == 4)
 		{
 			token = strtok(NULL, "=");
 			token = strtok(token, ":");
-
 			while (token)
 			{
 				result = malloc(strlen(token) + strlen(command) + 2);
