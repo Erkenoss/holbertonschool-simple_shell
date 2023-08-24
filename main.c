@@ -31,17 +31,6 @@ int main(void)
 		{
 			input[read - 1] = '\0';
 		}
-		if (strlen(input) == strlen("exit") && strcmp(input, "exit") == 0)
-		{
-            free(input);
-            exit(0);
-        }
-		if (strlen(input) > strlen("exit") && strstr(input, "exit") == NULL)
-		{
-			fprintf(stderr, "/bin/ls: cannot access '/test_hbtn': No such file or directory\n");
-            free(input);
-            exit(2);
-        }
 		token_input(input);
 	}
 	free(input);
