@@ -14,7 +14,7 @@ void executable(char *argv[])
 		if (strcmp(argv[0], "exit") == 0 && argv[1] == NULL)
 		{
 			free(argv[0]);
-			exit(0);
+			exit(2);
 		}
 		else
 		{  
