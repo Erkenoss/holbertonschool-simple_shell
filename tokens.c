@@ -26,11 +26,11 @@ void token_input(char *input)
 		print_env();
 		return;
 	}
-	/*if (strcmp(tokens[0], "exit") == 0 && tokens[1] == NULL)
+	if (strcmp(tokens[0], "exit") == 0 && tokens[1] == NULL)
 	{
 		free(tokens[0]);
 		exit(0);
-	}*/
+	}
 
 	if (strchr(tokens[0], '/') == NULL)
 	{
