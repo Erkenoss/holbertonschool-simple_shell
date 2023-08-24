@@ -20,9 +20,6 @@ void token_input(char *input)
 	{
 		return;
 	}
-
-	our_exit(tokens);
-
 	if (strcmp(tokens[0], "env") == 0)
 	{
 		print_env();

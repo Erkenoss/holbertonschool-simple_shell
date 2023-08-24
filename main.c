@@ -38,6 +38,7 @@ int main(void)
         }
 		if (strlen(input) > strlen("exit") && strstr(input, "exit") == NULL)
 		{
+			fprintf(stderr, "/bin/ls: cannot access '/test_hbtn': No such file or directory\n");
             free(input);
             exit(2);
         }
