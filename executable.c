@@ -7,7 +7,9 @@
 void executable(char *argv[])
 {
 	int status;
+	int status_exit;
 	pid_t child;
+	
 
 	if (access(argv[0], X_OK) != 0)
 	{
@@ -30,5 +32,13 @@ void executable(char *argv[])
 	else
 	{
 		wait(&status);
+		if (WIFEXITED(status))
+		{
+			status_exit = WEXITSTATUS(status);
+			if (status_exit != 0)
+			{
+				exit(2);
+			}
+		}
 	}
 }

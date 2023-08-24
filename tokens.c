@@ -27,11 +27,6 @@ void token_input(char *input)
 	}
 	if (strcmp(tokens[0], "exit") == 0)
 	{
-		if (access(tokens[0], X_OK) != 0)
-			{
-				free(tokens[0]);
-				exit(2);
-			}
 		free(tokens[0]);
 		exit(0);
 	}
