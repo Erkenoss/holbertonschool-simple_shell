@@ -16,16 +16,6 @@ void token_input(char *input)
 		}
 		split = strtok(NULL, " ");
 	}
-	if (strchr(tokens[0], '/') == NULL)
-	{
-		tokens[0] = _getpath(tokens[0]);
-		executable(tokens);
-		free(tokens[0]);
-	}
-	else
-	{
-		executable(tokens);
-	}
 	if (tokens[0] == NULL)
 	{
 		return;
@@ -38,4 +28,14 @@ void token_input(char *input)
 		print_env();
 		return;
 	}
+	     if (strchr(tokens[0], '/') == NULL)
+        {
+                tokens[0] = _getpath(tokens[0]);
+                executable(tokens);
+                free(tokens[0]);
+        }
+        else
+        {
+                executable(tokens);
+        }
 }
