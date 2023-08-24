@@ -1,0 +1,82 @@
+.\"Manpage for simple_shell(1)
+.\" Contact [Cathy, Xavier and Yoann] <cathy.augustin@holbertonstudents.com> for feedback or improvements
+.TH SIMPLE_SHELL "August 2023" "Version 1.0" "User Commands"
+.SH NAME
+simple_shell \- formatted output conversion
+.SH SYNOPSIS
+.nf
+.B #include <stdio.h>
+.B #include <stdarg.h>
+.B int _printf(const char *format, ...);
+.fi
+.SH DESCRIPTION
+The \fB_printf()\fP function prints formatted output to the standard output (stdout).
+
+It takes a variable number of arguments following the \fIformat\fP argument, which are used to replace the conversion specifiers in the \fIformat\fP string.
+
+The \fIformat\fP string can contain plain characters and conversion specifiers. Conversion specifiers are denoted by a '%' character followed by a format specifier character.
+
+The \fB_printf()\fP function supports the following format specifiers:
+
+.TP
+\fB%c\fP
+Print a single character. Expects an argument of type 'int' representing the ASCII value of the character.
+.TP
+\fB%i\fP, \fB%d\fP
+Print signed integers. Both specifiers are equivalent and expect an argument of type 'int'.
+.TP
+\fB%s\fP
+Print a null-terminated string. Expects an argument of type 'char*', which is a pointer to the first character of the string.
+.TP
+\fB%%\fP
+Print a literal percent sign '%'. Does not expect any additional arguments.
+
+.SH RETURN VALUE
+The \fB_printf()\fP function returns the total number of characters printed on success.
+
+If the \fIformat\fP argument is NULL or consists of only a '%', the function returns -1, indicating an error.
+
+.SH EXAMPLES
+The following example demonstrates how to use \fB_printf()\fP:
+
+.nf
+.B #include <stdio.h>
+
+int main() {
+    int a = 42;
+    char ch = 'X';
+    char *str = "Hello, world!";
+    
+    int count = _printf("Integer: %d, Character: %c, String: %s\\n", a, ch, str);
+    _printf("Total characters printed: %d\\n", count);
+    return 0;
+}
+.fi
+
+This will output:
+.nf
+Integer: 42, Character: X, String: Hello, world!
+Total characters printed: 38
+.fi
+
+.SH NOTES
+.PP
+- This \fB_printf()\fP function is a simplified version of the standard C library printf() function. It lacks some error handling and does not support all the formatting capabilities of the standard printf() function, but it covers the basic usage for the mentioned specifiers.
+.PP
+- Make sure to include the required header files \fI<stdio.h>\fP and \fI<stdarg.h>\fP when using \fB_printf()\fP.
+
+.SH SEE ALSO
+.PP
+\fBprintf(3)\fP, \fBsprintf(3)\fP, \fBfprintf(3)\fP
+
+.SH BUGS
+.PP
+The lack of support for certain format specifiers and the absence of full error handling make this function less robust compared to the standard printf() function.
+
+.SH AUTHOR
+.PP
+This \fB_printf()\fP function example and man page were created by [Cathy and Yoann].
+
+.SH COPYRIGHT
+.PP
+No copyright. This is free and unencumbered software released into the public domain.
