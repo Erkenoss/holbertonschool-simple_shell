@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+* token_input - tokenize the input
+*
+* @input: the stdin put by input
+*
+* Return: No return, void function
+*/
+
 void token_input(char *input)
 {
 	char *split = NULL;
@@ -39,6 +47,6 @@ void token_input(char *input)
 		free(tokens[0]);
 		return;
 	}
-	fprintf(stderr, "toto./hsh: 1: %s: not found\n", split);
+	fprintf(stderr, "./hsh: 1: %s: not found\n", split);
 	free(split);
 }

@@ -1,9 +1,11 @@
 #include "main.h"
 /**
- * path_command - function that finds the path to execute command
- * @command: command
+ * _getpath- function that finds the path to execute command
  *
- * Return: Nothing.
+ * @command: command enter by user in input
+ *
+ * Return: command if command has '/', result of concat with PATH
+ * or NULL if nothing is found
  */
 
 char *_getpath(char *command)

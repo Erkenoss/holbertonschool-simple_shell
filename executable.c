@@ -2,8 +2,12 @@
 
 /**
  * executable - Execute a file if it has executable permissions
- * @path_file: Path to the executable file
+ *
+ * @argv: Path to the executable file
+ *
+ * Return: no return, void function
  */
+
 void executable(char *argv[])
 {
 	int status;
