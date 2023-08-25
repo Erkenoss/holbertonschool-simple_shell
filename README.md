@@ -89,9 +89,9 @@ General
 Authorized functions and macros
 
 - all functions from string.h
-- `access` (man 2 access)
-- `chdir` (man 2 chdir)
-- `close` (man 2 close)
+> - `access` (man 2 access)             > - `perror` (man 3 perror)
+- `chdir` (man 2 chdir)                - `printf` (man 3 printf)
+- `close` (man 2 close)                - `fprintf` (man 3 fprintf)
 - `closedir` (man 3 closedir)
 - `execve` (man 2 execve)
 - `exit` (man 3 exit)
@@ -134,7 +134,6 @@ Authorized functions and macros
 | executable.c   | executable with fork   | 
 | print_env.c  | print environement   | 
 | tokens.c | split in individual elements |
-| exit.c | exit the shell |
 | man_1_simple_shell | manual for simple shell |
 | README.md | The README.md file |
 | Sources | source images |
