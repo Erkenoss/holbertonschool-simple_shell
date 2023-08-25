@@ -15,7 +15,7 @@ char *_getpath(char *command)
 	char *cache;
 	char *result = NULL;
 
-	if (strchr(command, '/') == NULL)
+	if (strchr(command, '/') != NULL)
 	{
 		return (strdup(command));
 	}
@@ -49,5 +49,5 @@ char *_getpath(char *command)
 		free(cache);
 		i++;
 	}
-	return (NULL);
+	return (command);
 }
