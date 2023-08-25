@@ -1,17 +1,20 @@
 #include "main.h"
 
-/*
-* print_env - print environ
-*
-* Return: no return, void function
-*/
+/**
+ * print_env - Print the environment variables.
+ *
+ * This function prints the environment variables to the standard output.
+ * Each environment variable is printed on a new line.
+ *
+ * Return: no return, void function
+ */
 
 void print_env(void)
 {
-	char **env;
+    char **env;
 
-	for (env = environ; *env != NULL; env++)
-	{
-		printf("%s\n", *env);
-	}
+    for (env = environ; *env != NULL; env++)
+    {
+        printf("%s\n", *env);
+    }
 }
