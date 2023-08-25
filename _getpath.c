@@ -49,5 +49,5 @@ char *_getpath(char *command)
 		free(cache);
 		i++;
 	}
-	return (command);
+	return (NULL);
 }
