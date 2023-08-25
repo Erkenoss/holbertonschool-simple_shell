@@ -207,7 +207,7 @@ Feature requests are always welcome.
 
 If there's anything you'd like to chat about, please feel free to join our 
 
-<a href="https://www.freepnglogos.com/pics/discord-logo-png" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" width="100" alt="discord logo logodownload download logotipos" /></a>
+<img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" width="100" alt="discord logo logodownload download logotipos" /></a>
 
 
 ## Peers ❤️ 
