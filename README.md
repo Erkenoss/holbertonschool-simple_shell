@@ -9,20 +9,20 @@
     * [Objective](#objective)
     * [Compilation](#compilation)
     * [Valgrind](#valgrind)
-    * [Tech Stack](tech-stack)
-    * [Features ](#features)
+    * [Tech Stack](#tech-stack)
+    * [Features](#features)
     * [Requirements](#requirements)
     * [More info](#more-info)
     * [Files description](#files-description)
-    * [Specifiers / output](specifiers-/-output)
-    * [Project instructions](project-instructions)
-    * [Process](process)
-    * [Examples and testing](examples-and-testing)
-    * [Man page](man-page)
-    * [Feedback](feedback)
-    * [Peers](peers)
-    * [Sources](sources)
-    * [Authors](authors)
+    * [Specifiers / output](#specifiers-/-output)
+    * [Project instructions](#project-instructions)
+    * [Process](#process)
+    * [Examples and testing](#examples-and-testing)
+    * [Man page](#man-page)
+    * [Feedback](#feedback)
+    * [Peers](#peers)
+    * [Sources](#sources)
+    * [Authors](#authors)
 
 
 
@@ -154,7 +154,7 @@ $
 ## Project instructions
 
 
-* [Task 0](https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Task%200.png)
+* [Task 0](#https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Task%200.png)
 * [Task 1](https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Task%201.png)
 * [Task 2](https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Task%202.png)
 * [Task 3](https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Task%203.png)
