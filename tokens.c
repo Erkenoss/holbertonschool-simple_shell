@@ -30,14 +30,15 @@ void token_input(char *input)
 		free(tokens[0]);
 		exit(0);
 	}
-	if (strchr(tokens[0], '/') == NULL)
+	split = strdup(tokens[0]);
+	tokens[0] = _getpath(tokens[0]);
+	if (tokens[0] != NULL)
 	{
-		tokens[0] = _getpath(tokens[0]);
+		free(split);
 		executable(tokens);
 		free(tokens[0]);
+		return;
 	}
-	else
-	{
-		executable(tokens);
-	}
+	fprintf(stderr, "toto./hsh: 1: %s: not found\n", split);
+	free(split);
 }

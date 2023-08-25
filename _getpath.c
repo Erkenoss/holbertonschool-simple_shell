@@ -13,6 +13,10 @@ char *_getpath(char *command)
 	char *cache;
 	char *result = NULL;
 
+	if (strchr(command, '/') != NULL)
+	{
+		return (strdup(command));
+	}
 	while (environ[i])
 	{
 		cache = strdup(environ[i]);
