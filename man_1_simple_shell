@@ -5,36 +5,44 @@
 simple_shell \- formatted output conversion
 .SH SYNOPSIS
 .nf
-.B #include <stdio.h>
-.B #include <stdarg.h>
-.B int _printf(const char *format, ...);
+The shell is executed by typing ./hsh
+.br
+Then, it will wait for an input such as : command [arguments] [other]
 .fi
 .SH DESCRIPTION
-The \fB_printf()\fP function prints formatted output to the standard output (stdout).
+This program simulates a command interpreter based in Unix and GNU/LINUX with its basic commands.
+through a terminal emulator and some executable instructions(shell scripts) the user can interact with this \fBsimple_shell.\fR
+This simple_shell is not supossed to be an exact imitation of the original Unix Shell. This doesn't cover all of the instructions the original does.
 
-It takes a variable number of arguments following the \fIformat\fP argument, which are used to replace the conversion specifiers in the \fIformat\fP string.
+.br
+.B What hsh can do :
+.br
+- Executes any command with its arguments
+.br
+- Executes built-in commands
+.br
+- Handle pipes
+.br
+- Handle the command seperator ;
+.br
+- Handle && and || logical operators
+.br
+- handle variable replacement
+.br
+- handle the $? variable
+.br
+- handle the $$ variable
 
-The \fIformat\fP string can contain plain characters and conversion specifiers. Conversion specifiers are denoted by a '%' character followed by a format specifier character.
+.SS INVOCATION
 
-The \fB_printf()\fP function supports the following format specifiers:
+To start the interactive mode the program will be executed, then starts the mode indicated by '$', to exit of the mode type 'exit' or type 'ctrl + d' and in the mode non-interactive the location that contains the command to be executed must be specified in the command line.
 
-.TP
-\fB%c\fP
-Print a single character. Expects an argument of type 'int' representing the ASCII value of the character.
-.TP
-\fB%i\fP, \fB%d\fP
-Print signed integers. Both specifiers are equivalent and expect an argument of type 'int'.
-.TP
-\fB%s\fP
-Print a null-terminated string. Expects an argument of type 'char*', which is a pointer to the first character of the string.
-.TP
-\fB%%\fP
-Print a literal percent sign '%'. Does not expect any additional arguments.
+.SS EXECUTION
 
-.SH RETURN VALUE
-The \fB_printf()\fP function returns the total number of characters printed on success.
+The program takes the arguments of the command line in a string and it is tokenizes into words using "space" as a delimiter, the first word is consider the command and all remaining are considered the arguments to that command. If the command is valid:
 
-If the \fIformat\fP argument is NULL or consists of only a '%', the function returns -1, indicating an error.
+1. If the first argument is different to '.', '/' or shell builtin, the program searches in the PATH and then invocates it.
+2. If the first character is '.' or '/', the program executes that typed command with the passed argument.
 
 .SH EXAMPLES
 The following example demonstrates how to use \fB_printf()\fP:
@@ -61,21 +69,63 @@ Total characters printed: 38
 
 .SH NOTES
 .PP
-- This \fB_printf()\fP function is a simplified version of the standard C library printf() function. It lacks some error handling and does not support all the formatting capabilities of the standard printf() function, but it covers the basic usage for the mentioned specifiers.
+.SH OPTIONS
+.B Simple Shell
+operates in both
+.I interactive
+and 
+.I non-interactive
+mode. The user may initiate
+.B simple shell
+and begin working or initate
+.B simple shell
+using commands meant to be run by the program.
+.SH ARGUMENTS
+The first argument, argument 0 is understood to be the command to be run by
+.B simple shell
+and arguments following as modifier or options.
+.SH Return value
+The return value of a simple command is its exit status
+.SH Example
 .PP
-- Make sure to include the required header files \fI<stdio.h>\fP and \fI<stdarg.h>\fP when using \fB_printf()\fP.
 
-.SH SEE ALSO
+$./hsh
+
+$
+
+$ls 
+
+.RS 3
+AUTHORS           _gentenv.c               _getpath.c
+.br
+executable.c      our_exits.c           man_1_simple_shell
+.br
+printenv.c          tokens.c                 main.c
+.br
+main.h              README.md
+.RE
+$
+.SH OPTIONS
 .PP
-\fBprintf(3)\fP, \fBsprintf(3)\fP, \fBfprintf(3)\fP
+There are no options for the moment.
+.SH EXIT STATUS
+The exit value depends on how a function has terminated. Every error is identified by a certain value. On success it will always return 0.
+.SH RETURN VALUE
+Return 0 on success, otherwise it will return the exit value.
+.SH ENVIRONMENT
+- PATH
+.br
+- $?
+.br
+- $$
 
 .SH BUGS
 .PP
-The lack of support for certain format specifiers and the absence of full error handling make this function less robust compared to the standard printf() function.
+There is no known bugs at the moment.
 
 .SH AUTHOR
 .PP
-This \fB_printf()\fP function example and man page were created by [Cathy and Yoann].
+This Simple_shell()\fP function example and man page were created by [Cathy, Xavier and Yoann].
 
 .SH COPYRIGHT
 .PP
