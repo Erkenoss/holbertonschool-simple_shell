@@ -1,6 +1,6 @@
 <h1 align="center"> C - Simple Shell 👋 </h1> <br>
 <p align="center">
-  <img src="https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Black%20Clean%20and%20Minimalist%20Project%20Overview%20Docs%20Banner%20(1).gif"/>
+  <img src="https://github.com/Erkenoss/holbertonschool-simple_shell/blob/master/sources/Banner%20shell.gif"/>
   <p align="center">
 
 
