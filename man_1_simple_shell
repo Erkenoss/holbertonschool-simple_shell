@@ -45,7 +45,7 @@ The program takes the arguments of the command line in a string and it is tokeni
 2. If the first character is '.' or '/', the program executes that typed command with the passed argument.
 
 .SH EXAMPLES
-The following example demonstrates how to use \fB_printf()\fP:
+The following example demonstrates how to use \fB simple_shell\fP:
 ./hsh [command] [options]
 $ ls -l
 .fi
