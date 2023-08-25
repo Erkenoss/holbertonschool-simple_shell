@@ -47,6 +47,7 @@ void token_input(char *input)
 		free(tokens[0]);
 		return;
 	}
-	fprintf(stderr, "./hsh: 1: %s: not found\n", split);
+	fprintf(stderr, "./hsh: 1: %s: TOTO not found\n", split);
 	free(split);
+	exit(127);
 }
