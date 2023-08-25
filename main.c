@@ -27,7 +27,7 @@ int main(void)
 			free(input);
 			exit(0);
 		}
-		if (read > 0 && input[read - 1] == '\n') 
+		if (read > 0 && input[read - 1] == '\n')
 		{
 			input[read - 1] = '\0';
 		}

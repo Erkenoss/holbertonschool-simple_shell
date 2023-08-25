@@ -4,6 +4,7 @@
  * executable - Execute a file if it has executable permissions
  *
  * @argv: Path to the executable file
+ * @input: Input put by the user of this shell
  *
  * Return: no return, void function
  */
@@ -13,7 +14,7 @@ void executable(char *argv[], char *input)
 	int status;
 	int status_exit;
 	pid_t child;
-	
+
 
 	if (access(argv[0], X_OK) != 0)
 	{
