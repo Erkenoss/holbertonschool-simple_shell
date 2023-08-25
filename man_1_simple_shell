@@ -46,25 +46,18 @@ The program takes the arguments of the command line in a string and it is tokeni
 
 .SH EXAMPLES
 The following example demonstrates how to use \fB_printf()\fP:
+./hsh [command] [options]
+$ ls -l
+.fi
 
-.nf
-.B #include <stdio.h>
-
-int main() {
-    int a = 42;
-    char ch = 'X';
-    char *str = "Hello, world!";
-    
-    int count = _printf("Integer: %d, Character: %c, String: %s\\n", a, ch, str);
-    _printf("Total characters printed: %d\\n", count);
-    return 0;
-}
+/bin/ls
+/bin/ls -a
+ls
 .fi
 
 This will output:
 .nf
-Integer: 42, Character: X, String: Hello, world!
-Total characters printed: 38
+(vos fichiers)
 .fi
 
 .SH NOTES
