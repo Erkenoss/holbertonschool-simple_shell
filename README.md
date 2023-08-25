@@ -14,7 +14,7 @@
     * [Requirements](#requirements)
     * [More info](#more-info)
     * [Files description](#files-description)
-    * [Specifiers / output](#specifiers-/-output)
+    * [Specifiers/output](specifiers-/-output)
     * [Project instructions](#project-instructions)
     * [Process](#process)
     * [Examples and testing](#examples-and-testing)
@@ -89,9 +89,9 @@ General
 Authorized functions and macros
 
 - all functions from string.h
-> - `access` (man 2 access)             > - `perror` (man 3 perror)
-- `chdir` (man 2 chdir)                - `printf` (man 3 printf)
-- `close` (man 2 close)                - `fprintf` (man 3 fprintf)
+- `access` (man 2 access)     
+- `chdir` (man 2 chdir)             
+- `close` (man 2 close)              
 - `closedir` (man 3 closedir)
 - `execve` (man 2 execve)
 - `exit` (man 3 exit)
@@ -138,7 +138,7 @@ Authorized functions and macros
 | README.md | The README.md file |
 | Sources | source images |
 
-## Specifiers / output
+## Specifiers/output
 
 Example of error with sh:
 
@@ -209,7 +209,7 @@ If there's anything you'd like to chat about, please feel free to join our
 <img src="https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png" width="100" alt="discord logo logodownload download logotipos" /></a>
 
 
-## Peers ❤️ 
+## Peers
 
 Thank you to all the helper peers for your kindness and professionalism 🙏 
 Special thanks to our Super SWE [<img src="https://github.com/HolbyKate/holbertonschool-Simple_Shell-Testing/blob/master/Shell/Capture%20d%E2%80%99e%CC%81cran%202023-08-24%20a%CC%80%2011.26.26.png" width="45"/>](https://www.canva.com/design/DAFr9xBi7cQ/watch)
