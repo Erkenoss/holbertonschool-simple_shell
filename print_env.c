@@ -1,7 +1,7 @@
 #include "main.h"
 
 /*
-* print_env - function for print environ
+* print_env - print environ
 *
 * Return: no return, void function
 */

@@ -12,7 +12,6 @@ extern char **environ;
 
 void token_input(char *input);
 void executable(char **argv, char *input);
-char *_getenv(const char *name);
 char *_getpath(char *cmd);
 void print_env(void);
 

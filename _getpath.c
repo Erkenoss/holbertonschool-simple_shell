@@ -17,14 +17,11 @@ char *_getpath(char *command)
 	char *result = NULL;
 
 	if (strchr(command, '/') != NULL)
-	{
 		return (strdup(command));
-	}
 	while (environ[i])
 	{
 		cache = strdup(environ[i]);
 		token = strtok(cache, "=");
-
 		if (strcmp(token, "PATH") == 0)
 		{
 			token = strtok(NULL, "=");
