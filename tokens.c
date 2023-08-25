@@ -43,7 +43,7 @@ void token_input(char *input)
 	if (tokens[0] != NULL)
 	{
 		free(split);
-		executable(tokens);
+		executable(tokens, input);
 		free(tokens[0]);
 		return;
 	}

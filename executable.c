@@ -8,7 +8,7 @@
  * Return: no return, void function
  */
 
-void executable(char *argv[])
+void executable(char *argv[], char *input)
 {
 	int status;
 	int status_exit;
@@ -31,6 +31,7 @@ void executable(char *argv[])
 	else if (child == 0)
 	{
 		execve(argv[0], argv, environ);
+		free(argv[0]);
 		exit(0);
 	}
 	else
@@ -42,6 +43,7 @@ void executable(char *argv[])
 			if (status_exit != 0)
 			{
 				free(argv[0]);
+				free(input);
 				exit(2);
 			}
 		}
